@@ -1,11 +1,11 @@
 <?php
-namespace Laralib\L5scaffold\Makes;
+namespace Robbielove\L5scaffold\Makes;
 
 use Illuminate\Console\DetectsApplicationNamespace;
 use Illuminate\Filesystem\Filesystem;
-use Laralib\L5scaffold\Commands\ScaffoldMakeCommand;
-use Laralib\L5scaffold\Validators\SchemaParser as ValidatorParser;
-use Laralib\L5scaffold\Validators\SyntaxBuilder as ValidatorSyntax;
+use Robbielove\L5scaffold\Commands\ScaffoldMakeCommand;
+use Robbielove\L5scaffold\Validators\SchemaParser as ValidatorParser;
+use Robbielove\L5scaffold\Validators\SyntaxBuilder as ValidatorSyntax;
 
 
 class MakeController

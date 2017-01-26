@@ -1,13 +1,13 @@
 <?php
 
-namespace Laralib\L5scaffold\Migrations;
+namespace Robbielove\L5scaffold\Migrations;
 
-use Laralib\L5scaffold\GeneratorException;
+use Robbielove\L5scaffold\GeneratorException;
 
 
 /**
  * Class SyntaxBuilder with modifications by Fernando
- * @package Laralib\L5scaffold\Migrations
+ * @package Robbielove\L5scaffold\Migrations
  * @author Jeffrey Way <jeffrey@jeffrey-way.com>
  */
 class SyntaxBuilder
@@ -261,8 +261,8 @@ class SyntaxBuilder
         } elseif ($type == 'view-index-header') {
 
             // Fields to index view
-            $syntax = sprintf("<th>%s", strtoupper($field['name']));
-            $syntax .= '</th>';
+            $syntax = sprintf("<div class=\"four wide grey column\">%s", ucfirst($field['name']));
+            $syntax .= '</div>';
 
         } elseif ($type == 'view-index-content') {
 
@@ -273,10 +273,10 @@ class SyntaxBuilder
         } elseif ($type == 'view-show-content') {
 
             // Fields to show view
-            $syntax = sprintf("<div class=\"form-group\">\n" .
-                str_repeat(' ', 21) . "<label for=\"%s\">%s</label>\n" .
-                str_repeat(' ', 21) . "<p class=\"form-control-static\">{{\$%s->%s}}</p>\n" .
-                str_repeat(' ', 16) . "</div>", strtolower($field['name']), strtoupper($field['name']), $meta['var_name'], strtolower($field['name']));
+            $syntax = sprintf("<div class=\"four wide column\">\n" .
+          str_repeat(' ', 21) . "<label for=\"%s\">%s</label>\n" .
+          str_repeat(' ', 21) . "<p>{{\$%s->%s}}</p>\n" .
+        str_repeat(' ', 16) . "</div>", strtolower($field['name']), strtoupper($field['name']), $meta['var_name'], strtolower($field['name']));
 
 
         } elseif ($type == 'view-edit-content') {
@@ -324,17 +324,17 @@ class SyntaxBuilder
                 break;
         }
 
-        $syntax[] = '<div class="form-group @if($errors->has('."'". $column . "'".')) has-error @endif">';
+        $syntax[] = '<div class="ui input @if($errors->has('."'". $column . "'".')) error @endif">';
         $syntax[] = '   <label for="' . $column . '-field">' . $title . '</label>';
 
         if($this->illuminate) {
-            $syntax[] = '   {!! Form::' . $input . '("' . $column . '", ' . $value . ', array("class" => "form-control", "id" => "' . $column . '-field")) !!}';
+            $syntax[] = '   {!! Form::' . $input . '("' . $column . '", ' . $value . ', array("class" => "ui input", "id" => "' . $column . '-field")) !!}';
         } else {
             $syntax[] = $this->htmlField($column, $variable, $field, $type);
         }
 
         $syntax[] = '   @if($errors->has("' . $column . '"))';
-        $syntax[] = '    <span class="help-block">{{ $errors->first("' . $column . '") }}</span>';
+        $syntax[] = '    <span class="ui pointing red basic label">{{ $errors->first("' . $column . '") }}</span>';
         $syntax[] = '   @endif';
         $syntax[] = '</div>';
 
@@ -417,13 +417,13 @@ class SyntaxBuilder
 
         switch ($field['type']) {
             case 'date':
-                $layout = "<input type=\"text\" id=\"$column-field\" name=\"$column\" class=\"form-control date-picker\" value=\"$value\"/>";
+                $layout = "<input type=\"text\" id=\"$column-event\" name=\"$column\" class=\"ui input\" readonly=\"true\" value=\"$value\"/>";
                 break;
             case 'boolean':
                 $layout = "<div class=\"btn-group\" data-toggle=\"buttons\"><label class=\"btn btn-primary\"><input type=\"radio\" value=\"true\" name=\"$column\" id=\"$column-field\" autocomplete=\"off\"> True</label><label class=\"btn btn-primary active\"><input type=\"radio\" name=\"$column-field\" value=\"false\" id=\"$column-field\" autocomplete=\"off\"> False</label></div>";
                 break;
             case 'text':
-                $layout = "<textarea class=\"form-control\" id=\"$column-field\" rows=\"3\" name=\"$column\">$value</textarea>";
+                $layout = "<textarea class=\"ui input\" id=\"$column-field\" rows=\"3\" name=\"$column\">$value</textarea>";
                 break;
             case 'string':
             default:

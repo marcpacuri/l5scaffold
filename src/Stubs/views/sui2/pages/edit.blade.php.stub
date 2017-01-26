@@ -1,0 +1,73 @@
+@extends('layouts.app')
+
+@section('title')
+{{Models}} / Edit / {{ ${{model}}->name }}
+@endsection
+@section('header')
+    <div class="ui header">
+        <h1><i class="big edit icon"></i> {{Models}} / Edit / {{ ${{model}}->name }}</h1>
+    </div>
+@endsection
+
+@section('content')
+    @include('error')
+<form class="ui form" action="{{ route('{{prefix}}{{models}}.update', ${{model}}->slug) }}" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="hidden" id="active_flag-field" name="active_flag" class="ui input" value="{{ ${{model}}->active_flag }}"/>
+    <div class="field">
+         <h2>
+           <i class="{{model}} icon"></i>
+         @if (${{model}}->name != '')
+            {{${{model}}->name}}
+         @else
+            Un-Named {{Model}}
+         @endif
+         </h2>
+    </div>
+    <div class="ui two column very padded stackable grid">
+      <div class="four wide column">
+             <h4><i class="{{model}} icon"></i>{{Model}} Name</h4>
+      </div>
+      <div class="twelve wide column @if($errors->has('name')) error @endif field">
+        <div class="ui fluid corner labeled input">
+          <input type="text" id="name-field" name="name" class="ui input" value="{{ ${{model}}->name }}" placeholder="{{Model}} Name"/>
+          <div class="ui corner label">
+            <i class="asterisk icon"></i>
+          </div>
+        </div>
+           @if($errors->has("name"))
+            <span class="ui pointing red basic label">{{ $errors->first("name") }}</span>
+           @endif
+      </div>
+      <div class="four wide column">
+        <h4><i class="left align icon"></i>Description</h4>
+      </div>
+      <div class="twelve wide column @if($errors->has('description')) error @endif field">
+        <div class="ui fluid corner labeled input">
+          <textarea class="ui input" id="description-field" rows="5" name="description" placeholder="Description">{{ ${{model}}->description }}</textarea>
+          <div class="ui corner label">
+            <i class="asterisk icon"></i>
+          </div>
+        </div>
+           @if($errors->has("description"))
+            <span class="ui pointing red basic label">{{ $errors->first("description") }}</span>
+           @endif
+      </div>
+      {{form_fields_fillable}}
+    </div>
+</div>
+<div class="ui padded vertical clearing segment">
+    <div class="ui three column stackable grid">
+      <div class="column">
+        <button type="submit" class="ui fluid positive button"><i class="save icon"></i> Save</button>
+      </div>
+      <div class="column">
+        <a class="ui fluid blue button" href="{{ route('{{prefix}}{{models}}.show', [${{model}}->slug]) }}"><i class="unhide icon"></i>View</a>
+      </div>
+      <div class="column">
+        <a class="ui fluid button" href="{{ route('{{prefix}}{{models}}.index') }}"><i class="undo icon"></i>Back to all</a>
+      </div>
+    </div>
+</form>
+@endsection
