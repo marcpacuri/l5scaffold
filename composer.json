@@ -1,13 +1,13 @@
 {
-  "name": "robbielove/l5scaffold",
+  "name": "laralib/l5scaffold",
   "description": "Extend Laravel 5's generators using Semantic UI scaffolding.",
   "keywords": ["laravel", "generators", "scaffold" , "laravel5", "semantic ui"],
   "license": "MIT",
   "minimum-stability": "dev",
   "authors": [
     {
-      "name": "Robbie Love ",
-      "email": "git@robbiecloud.com"
+      "name": "Ignasius Wahyudi",
+      "email": "ace3xx@gmail.com"
     }
   ],
   "require": {
@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Robbielove\\L5scaffold\\": "src/"
+      "Laralib\\L5scaffold\\": "src/"
     }
   }
 }
