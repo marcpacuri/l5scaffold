@@ -1,10 +1,10 @@
 <?php
 
-namespace Robbielove\L5scaffold\Localizations;
+namespace ace3\L5scaffold\Localizations;
 
 /**
  * Class SyntaxBuilder
- * @package Robbielove\L5scaffold\Migrations
+ * @package ace3\L5scaffold\Migrations
  * @author Ryan Gurnick <ryangurnick@gmail.com>
  */
 class SyntaxBuilder

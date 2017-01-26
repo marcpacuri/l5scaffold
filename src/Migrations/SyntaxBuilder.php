@@ -1,13 +1,13 @@
 <?php
 
-namespace Robbielove\L5scaffold\Migrations;
+namespace ace3\L5scaffold\Migrations;
 
-use Robbielove\L5scaffold\GeneratorException;
+use ace3\L5scaffold\GeneratorException;
 
 
 /**
  * Class SyntaxBuilder with modifications by Fernando
- * @package Robbielove\L5scaffold\Migrations
+ * @package ace3\L5scaffold\Migrations
  * @author Jeffrey Way <jeffrey@jeffrey-way.com>
  */
 class SyntaxBuilder

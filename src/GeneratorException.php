@@ -1,6 +1,6 @@
 <?php
 
-namespace Robbielove\L5scaffold;
+namespace ace3\L5scaffold;
 
 class GeneratorException extends \Exception {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Robbielove\L5scaffold\Tests;
+namespace ace3\L5scaffold\Tests;
 
 use PHPUnit_Framework_TestCase as PHPUnit;
 

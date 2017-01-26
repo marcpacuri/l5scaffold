@@ -19,7 +19,7 @@ composer require landish/pagination
 Open `config/app.php` and, to your **providers** array at the bottom, add:
 
 ```
-        Robbielove\L5scaffold\GeneratorsServiceProvider::class,
+        ace3\L5scaffold\GeneratorsServiceProvider::class,
 ```
 
 ### Step 3: Run Artisan!

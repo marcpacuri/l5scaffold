@@ -1,10 +1,10 @@
 <?php
 
-namespace Robbielove\L5scaffold\Validators;
+namespace ace3\L5scaffold\Validators;
 
 /**
  * Class SyntaxBuilder
- * @package Robbielove\L5scaffold\Migrations
+ * @package ace3\L5scaffold\Migrations
  * @author Ryan Gurnick <ryangurnick@gmail.com>
  */
 class SyntaxBuilder

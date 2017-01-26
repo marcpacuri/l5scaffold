@@ -1,10 +1,10 @@
 <?php
 
-namespace Robbielove\L5scaffold\Migrations;
+namespace ace3\L5scaffold\Migrations;
 
 /**
  * Class NameParser
- * @package Robbielove\L5scaffold\Migrations with modifications by Fernando
+ * @package ace3\L5scaffold\Migrations with modifications by Fernando
  * @author Jeffrey Way <jeffrey@jeffrey-way.com>
  */
 class NameParser

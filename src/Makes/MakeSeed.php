@@ -6,10 +6,10 @@
  * Time: 10:34 PM
  */
 
-namespace Robbielove\L5scaffold\Makes;
+namespace ace3\L5scaffold\Makes;
 
 use Illuminate\Filesystem\Filesystem;
-use Robbielove\L5scaffold\Commands\ScaffoldMakeCommand;
+use ace3\L5scaffold\Commands\ScaffoldMakeCommand;
 
 class MakeSeed
 {
