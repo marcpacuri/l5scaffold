@@ -1,6 +1,6 @@
 <?php
 
-namespace ace3\L5scaffold;
+namespace Laralib\L5scaffold;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -35,7 +35,7 @@ class GeneratorsServiceProvider extends ServiceProvider
 	private function registerScaffoldGenerator()
 	{
 		$this->app->singleton('command.larascaf.scaffold', function ($app) {
-			return $app['ace3\L5scaffold\Commands\ScaffoldMakeCommand'];
+			return $app['laralib\L5scaffold\Commands\ScaffoldMakeCommand'];
 		});
 
 		$this->commands('command.larascaf.scaffold');

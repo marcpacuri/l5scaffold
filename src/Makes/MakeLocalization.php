@@ -6,12 +6,12 @@
  * Time: 10:34 PM
  */
 
-namespace ace3\L5scaffold\Makes;
+namespace Laralib\L5scaffold\Makes;
 
 use Illuminate\Filesystem\Filesystem;
-use ace3\L5scaffold\Commands\ScaffoldMakeCommand;
-use ace3\L5scaffold\Localizations\SchemaParser as LocalizationsParser;
-use ace3\L5scaffold\Localizations\SyntaxBuilder as LocalizationsBuilder;
+use Laralib\L5scaffold\Commands\ScaffoldMakeCommand;
+use Laralib\L5scaffold\Localizations\SchemaParser as LocalizationsParser;
+use Laralib\L5scaffold\Localizations\SyntaxBuilder as LocalizationsBuilder;
 
 class MakeLocalization
 {

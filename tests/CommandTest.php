@@ -1,6 +1,6 @@
 <?php
 
-namespace ace3\L5scaffold\Tests;
+namespace Laralib\L5scaffold\Tests;
 
 use PHPUnit_Framework_TestCase as PHPUnit;
 
@@ -36,7 +36,7 @@ class CommandTest extends PHPUnit
 	{
 		$this->app = require __DIR__.'/../vendor/laravel/laravel/bootstrap/app.php';
 		
-		$this->app->register('ace3\L5scaffold\GeneratorsServiceProvider');
+		$this->app->register('laralib\L5scaffold\GeneratorsServiceProvider');
 
         $this->app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 	}

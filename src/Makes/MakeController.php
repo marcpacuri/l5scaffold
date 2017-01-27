@@ -1,11 +1,11 @@
 <?php
-namespace ace3\L5scaffold\Makes;
+namespace Laralib\L5scaffold\Makes;
 
 use Illuminate\Console\DetectsApplicationNamespace;
 use Illuminate\Filesystem\Filesystem;
-use ace3\L5scaffold\Commands\ScaffoldMakeCommand;
-use ace3\L5scaffold\Validators\SchemaParser as ValidatorParser;
-use ace3\L5scaffold\Validators\SyntaxBuilder as ValidatorSyntax;
+use Laralib\L5scaffold\Commands\ScaffoldMakeCommand;
+use Laralib\L5scaffold\Validators\SchemaParser as ValidatorParser;
+use Laralib\L5scaffold\Validators\SyntaxBuilder as ValidatorSyntax;
 
 
 class MakeController

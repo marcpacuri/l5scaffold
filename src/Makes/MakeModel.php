@@ -6,12 +6,12 @@
  * Time: 10:34 PM
  */
 
-namespace ace3\L5scaffold\Makes;
+namespace Laralib\L5scaffold\Makes;
 
 use Illuminate\Filesystem\Filesystem;
-use ace3\L5scaffold\Commands\ScaffoldMakeCommand;
-use ace3\L5scaffold\Migrations\SchemaParser;
-use ace3\L5scaffold\Migrations\SyntaxBuilder;
+use Laralib\L5scaffold\Commands\ScaffoldMakeCommand;
+use Laralib\L5scaffold\Migrations\SchemaParser;
+use Laralib\L5scaffold\Migrations\SyntaxBuilder;
 
 class MakeModel
 {

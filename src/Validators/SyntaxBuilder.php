@@ -1,6 +1,6 @@
 <?php
 
-namespace ace3\L5scaffold\Validators;
+namespace Laralib\L5scaffold\Validators;
 
 /**
  * Class SyntaxBuilder

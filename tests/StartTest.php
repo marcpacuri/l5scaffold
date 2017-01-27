@@ -1,6 +1,6 @@
 <?php
 
-namespace ace3\L5scaffold\Tests;
+namespace Laralib\L5scaffold\Tests;
 
 use PHPUnit_Framework_TestCase as PHPUnit;
 

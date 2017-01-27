@@ -1,20 +1,20 @@
 <?php
 
-namespace ace3\L5scaffold\Commands;
+namespace Laralib\L5scaffold\Commands;
 
 use Illuminate\Console\DetectsApplicationNamespace;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Input;
-use ace3\L5scaffold\Makes\MakeController;
-use ace3\L5scaffold\Makes\MakeLayout;
-use ace3\L5scaffold\Makes\MakeLocalization;
-use ace3\L5scaffold\Makes\MakeMigration;
-use ace3\L5scaffold\Makes\MakeModel;
-use ace3\L5scaffold\Makes\MakeRoute;
-use ace3\L5scaffold\Makes\MakerTrait;
-use ace3\L5scaffold\Makes\MakeSeed;
-use ace3\L5scaffold\Makes\MakeView;
+use Laralib\L5scaffold\Makes\MakeController;
+use Laralib\L5scaffold\Makes\MakeLayout;
+use Laralib\L5scaffold\Makes\MakeLocalization;
+use Laralib\L5scaffold\Makes\MakeMigration;
+use Laralib\L5scaffold\Makes\MakeModel;
+use Laralib\L5scaffold\Makes\MakeRoute;
+use Laralib\L5scaffold\Makes\MakerTrait;
+use Laralib\L5scaffold\Makes\MakeSeed;
+use Laralib\L5scaffold\Makes\MakeView;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ace3\L5scaffold\Localizations;
+namespace Laralib\L5scaffold\Localizations;
 
 /**
  * Class SyntaxBuilder
