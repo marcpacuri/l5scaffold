@@ -22,5 +22,10 @@
     "psr-4": {
       "Laralib\\L5scaffold\\": "src/"
     }
+  },
+  "scripts": {
+    "post-update-cmd": [
+            "php -r \"php artisan make:auth\""
+        ],
   }
 }
