@@ -36,7 +36,7 @@ class CommandTest extends PHPUnit
 	{
 		$this->app = require __DIR__.'/../vendor/laravel/laravel/bootstrap/app.php';
 		
-		$this->app->register('laralib\L5scaffold\GeneratorsServiceProvider');
+		$this->app->register('Laralib\L5scaffold\GeneratorsServiceProvider');
 
         $this->app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 	}
