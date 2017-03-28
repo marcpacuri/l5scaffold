@@ -15,20 +15,13 @@ use \Session;
 class {{Model}}Controller extends Controller
 {
 	/**
-	 * Variable to model
-	 *
-	 * @var {{model}}
-	 */
-	protected $model;
-
-	/**
 	 * Create instance of controller with Model
 	 *
 	 * @return void
 	 */
-	public function __construct({{Model}} $model)
+	public function __construct()
 	{
-		$this->model = $model;
+
 	}
 
 	/**
@@ -38,9 +31,9 @@ class {{Model}}Controller extends Controller
 	 */
 	public function index()
 	{
-		${{models}} = {{Model}}::where('active_flag', 1)->orderBy('id', 'desc')->paginate(10);
-		$active = {{Model}}::where('active_flag', 1);
-		return view('{{models}}.index', compact('{{models}}', 'active'));
+		${{models}} = {{Model}}::orderBy('id', 'desc')->paginate(10);
+		
+		return view('{{models}}.index', compact('{{models}}'));
 	}
 
 	/**
@@ -61,25 +54,11 @@ class {{Model}}Controller extends Controller
 	 */
 	public function store(Request $request, User $user)
 	{
-		${{model}} = new {{Model}}();
-
-		${{model}}->name = ucfirst($request->input("name"));
-		${{model}}->slug = str_slug($request->input("name"), "-");
-		${{model}}->description = ucfirst($request->input("description"));
-		${{model}}->active_flag = 1;
-		${{model}}->author_id = $request->user()->id;
-
-		$this->validate($request, [
-					 'name' => 'required|max:255|unique:{{models}}',
-					 'description' => 'required'
-			 ]);
+		{{Model}}::create($request->all());
 
 		${{model}}->save();
 
-		Session::flash('message_type', 'success');
-		Session::flash('message_icon', 'checkmark');
-		Session::flash('message_header', 'Success');
-		Session::flash('message', "The {{Model}} \"<a href='{{models}}/${{model}}->slug'>" . ${{model}}->name . "</a>\" was Created.");
+		Session::flash('saved', true);
 
 		return redirect()->route('{{prefix}}{{models}}.index');
 	}
@@ -92,8 +71,6 @@ class {{Model}}Controller extends Controller
 	 */
 	public function show({{Model}} ${{model}})
 	{
-		//${{model}} = $this->model->findOrFail($id);
-
 		return view('{{models}}.show', compact('{{model}}'));
 	}
 
@@ -105,8 +82,6 @@ class {{Model}}Controller extends Controller
 	 */
 	public function edit({{Model}} ${{model}})
 	{
-		//${{model}} = $this->model->findOrFail($id);
-
 		return view('{{models}}.edit', compact('{{model}}'));
 	}
 
@@ -119,24 +94,9 @@ class {{Model}}Controller extends Controller
 	 */
 	public function update(Request $request, {{Model}} ${{model}}, User $user)
 	{
+		${{model}}->update($request->all());
 
-		${{model}}->name = ucfirst($request->input("name"));
-    ${{model}}->slug = str_slug($request->input("name"), "-");
-		${{model}}->description = ucfirst($request->input("description"));
-		${{model}}->active_flag = 1;//change to reflect current status or changed status
-		${{model}}->author_id = $request->user()->id;
-
-		$this->validate($request, [
-					 'name' => 'required|max:255|unique:{{models}},name,' . ${{model}}->id,
-					 'description' => 'required'
-			 ]);
-
-		${{model}}->save();
-
-		Session::flash('message_type', 'blue');
-		Session::flash('message_icon', 'checkmark');
-		Session::flash('message_header', 'Success');
-		Session::flash('message', "The {{Model}} \"<a href='{{models}}/${{model}}->slug'>" . ${{model}}->name . "</a>\" was Updated.");
+		Session::flash('saved', true);
 
 		return redirect()->route('{{prefix}}{{models}}.index');
 	}
@@ -149,32 +109,9 @@ class {{Model}}Controller extends Controller
 	 */
 	public function destroy({{Model}} ${{model}})
 	{
-		${{model}}->active_flag = 0;
-		${{model}}->save();
+		${{model}}->delete()
 
-		Session::flash('message_type', 'negative');
-		Session::flash('message_icon', 'hide');
-		Session::flash('message_header', 'Success');
-		Session::flash('message', 'The {{Model}} ' . ${{model}}->name . ' was De-Activated.');
-
-		return redirect()->route('{{prefix}}{{models}}.index');
-	}
-
-	/**
-	 * Re-Activate the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function reactivate({{Model}} ${{model}})
-	{
-		${{model}}->active_flag = 1;
-		${{model}}->save();
-
-		Session::flash('message_type', 'success');
-		Session::flash('message_icon', 'checkmark');
-		Session::flash('message_header', 'Success');
-		Session::flash('message', 'The {{Model}} ' . ${{model}}->name . ' was Re-Activated.');
+		Session::flash('deleted', true);
 
 		return redirect()->route('{{prefix}}{{models}}.index');
 	}
