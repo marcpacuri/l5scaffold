@@ -37,17 +37,17 @@ class MakeSeed
      */
     protected function start()
     {
-        $path = $this->getPath($this->scaffoldCommandObj->getObjName('Name') . 'TableSeeder', 'seed');
+        // $path = $this->getPath($this->scaffoldCommandObj->getObjName('Name') . 'TableSeeder', 'seed');
 
 
-        if ($this->files->exists($path))
-        {
-            return $this->scaffoldCommandObj->comment('x Seed');
-        }
+        // if ($this->files->exists($path))
+        // {
+        //     return $this->scaffoldCommandObj->comment('x Seed');
+        // }
 
-        $this->makeDirectory($path);
-        $this->files->put($path, $this->compileSeedStub());
-        $this->scaffoldCommandObj->info('+ Seed');
+        // $this->makeDirectory($path);
+        // $this->files->put($path, $this->compileSeedStub());
+        // $this->scaffoldCommandObj->info('+ Seed');
     }
 
     /**

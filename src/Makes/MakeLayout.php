@@ -38,8 +38,8 @@ class MakeLayout
     protected function start()
     {
         $ui = $this->scaffoldCommandObj->getMeta()['ui'];
-        $this->putViewLayout('Layout', "Stubs/views/$ui/layout.blade.php.stub", 'layout.blade.php');
-        $this->putViewLayout('Error', "Stubs/views/$ui/error.blade.php.stub", 'error.blade.php');
+        // $this->putViewLayout('Layout', "Stubs/views/$ui/layout.blade.php.stub", 'layout.blade.php');
+        // $this->putViewLayout('Error', "Stubs/views/$ui/error.blade.php.stub", 'error.blade.php');
     }
 
 
