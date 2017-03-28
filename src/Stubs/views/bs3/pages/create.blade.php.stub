@@ -1,28 +1,27 @@
-@extends('layout')
-
-@section('header')
-    <div class="page-header">
-        <h1><i class="glyphicon glyphicon-plus"></i> {{Model}} / Create </h1>
-    </div>
-@endsection
+@extends('app')
 
 @section('content')
-    @include('error')
 
-    <div class="row">
-        <div class="col-md-12">
+<div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>{{Model}} / Create</h3>
+            </div>
+            <div class="panel-body">
 
-            <form action="{{ route('{{prefix}}{{models}}.store') }}" method="POST">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <form action="{{ route('{{prefix}}{{models}}.store') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    
+                    <div class="row clearfix">
+                        {{form_fields_empty}}
+                    </div>
 
-                {{form_fields_empty}}
-
-                <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Create</button>
-                    <a class="btn btn-link pull-right" href="{{ route('{{prefix}}{{models}}.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>
-                </div>
-            </form>
-
+                    <div class="panel-actions">
+                        <a class="btn btn-default" href="{{ route ('{{prefix}}{{models}}.index') }}">Back</a>
+                        <button class="btn btn-success">Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

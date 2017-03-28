@@ -56,8 +56,6 @@ class {{Model}}Controller extends Controller
 	{
 		{{Model}}::create($request->all());
 
-		${{model}}->save();
-
 		Session::flash('saved', true);
 
 		return redirect()->route('{{prefix}}{{models}}.index');
@@ -109,7 +107,7 @@ class {{Model}}Controller extends Controller
 	 */
 	public function destroy({{Model}} ${{model}})
 	{
-		${{model}}->delete()
+		${{model}}->delete();
 
 		Session::flash('deleted', true);
 

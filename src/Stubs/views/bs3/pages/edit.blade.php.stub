@@ -1,29 +1,32 @@
-@extends('layout')
-
-@section('header')
-    <div class="page-header">
-        <h1><i class="glyphicon glyphicon-edit"></i> {{Model}} / Edit #{{${{model}}->id}}</h1>
-    </div>
-@endsection
+@extends('app')
 
 @section('content')
-    @include('error')
+    
+    <div class="col-md-10 col-md-offset-1">
 
-    <div class="row">
-        <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>{{Model}} / Edit #{{${{model}}->id}}</h3>
+            </div>
 
-            <form action="{{ route('{{prefix}}{{models}}.update', ${{model}}->id) }}" method="POST">
-                <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="panel-body">
 
-                {{form_fields_fillable}}
+                <form action="{{ route('{{prefix}}{{models}}.update', ${{model}}->id) }}" method="POST">
+                    <input type="hidden" name="_method" value="PUT">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    
+                    <div class="row clearfix">
+                        {{form_fields_fillable}}
+                    </div>
 
-                <div class="well well-sm">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a class="btn btn-link pull-right" href="{{ route('{{prefix}}{{models}}.index') }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
-                </div>
-            </form>
-
+                    <div class="panel-actions">
+                        <a class="btn btn-default" href="{{ route('{{prefix}}{{models}}.index') }}">Back</a>
+                        <button class="btn btn-success">Save</button>
+                    </div>
+                </form>
+                
+            </div>
         </div>
     </div>
+    
 @endsection
