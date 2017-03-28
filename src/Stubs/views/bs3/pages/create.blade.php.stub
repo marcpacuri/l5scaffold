@@ -9,13 +9,6 @@
             </div>
             <div class="panel-body">
 
-                {!! Form::open(['method' => 'POST', 'url' => '#']) !!}
-                
-                    
-                
-                {!! Form::close() !!}
-
-
                 <form action="{{ route('{{prefix}}{{models}}.store') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     
