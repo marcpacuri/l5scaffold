@@ -6,7 +6,7 @@
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3>{{Model}} / Edit #{{${{model}}->id}}</h3>
+                <h3>{{Model}} / Edit</h3>
             </div>
 
             <div class="panel-body">
@@ -20,8 +20,8 @@
                     </div>
 
                     <div class="panel-actions">
-                        <a class="btn btn-default" href="{{ route('{{prefix}}{{models}}.index') }}">Back</a>
-                        <button class="btn btn-success">Save</button>
+                        <button class="btn btn-success pull-right">Save</button>
+                        <a class="btn btn-default pull-right" href="{{ route('{{prefix}}{{models}}.index') }}">Back</a>
                     </div>
                 </form>
                 

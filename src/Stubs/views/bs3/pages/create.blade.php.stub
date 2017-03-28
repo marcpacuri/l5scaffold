@@ -9,6 +9,13 @@
             </div>
             <div class="panel-body">
 
+                {!! Form::open(['method' => 'POST', 'url' => '#']) !!}
+                
+                    
+                
+                {!! Form::close() !!}
+
+
                 <form action="{{ route('{{prefix}}{{models}}.store') }}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     
@@ -17,8 +24,8 @@
                     </div>
 
                     <div class="panel-actions">
-                        <a class="btn btn-default" href="{{ route ('{{prefix}}{{models}}.index') }}">Back</a>
-                        <button class="btn btn-success">Save</button>
+                        <button class="btn btn-success pull-right">Save</button>
+                        <a class="btn btn-default pull-right" href="{{ route ('{{prefix}}{{models}}.index') }}">Back</a>
                     </div>
                 </form>
             </div>
