@@ -11,19 +11,18 @@
 
             <div class="panel-body">
 
-                <form action="{{ route('{{prefix}}{{models}}.update', ${{model}}->id) }}" method="POST">
-                    <input type="hidden" name="_method" value="PUT">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    
+                {!! Form::model(${{model}}, ['method' => 'PUT', 'route' => ['{{prefix}}{{models}}.update', ${{model}}->id] ]) !!}
+
                     <div class="clearfix">
-                        {{form_fields_fillable}}
+                        @include ('{{prefix}}{{models}}.partials.form')
                     </div>
 
                     <div class="panel-actions">
                         <button class="btn btn-success pull-right">Save</button>
                         <a class="btn btn-default pull-right" href="{{ route('{{prefix}}{{models}}.index') }}">Back</a>
                     </div>
-                </form>
+                    
+                {!! Form::close() !!}
                 
             </div>
         </div>

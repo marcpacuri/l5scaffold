@@ -9,18 +9,20 @@
             </div>
             <div class="panel-body">
 
-                <form action="{{ route('{{prefix}}{{models}}.store') }}" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    
+                {!! Form::open(['method' => 'POST', 'route' => '{{prefix}}{{models}}.store']) !!}
+                
                     <div class="clearfix">
-                        {{form_fields_empty}}
+                        @include ('{{prefix}}{{models}}.partials.form')
                     </div>
 
                     <div class="panel-actions">
                         <button class="btn btn-success pull-right">Save</button>
                         <a class="btn btn-default pull-right" href="{{ route ('{{prefix}}{{models}}.index') }}">Back</a>
                     </div>
-                </form>
+                
+                {!! Form::close() !!}
+
+
             </div>
         </div>
     </div>

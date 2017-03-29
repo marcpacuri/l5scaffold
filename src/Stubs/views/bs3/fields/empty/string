@@ -1,4 +1,6 @@
-<div class="form-group">
-	<label for="{{field.name}}-field">{{field.Name}}</label>
-	<input class="form-control" type="text" name="{{field.name}}" id="{{field.name}}-field" value="{{field.value.default}}" />
+<div class="form-group{{ $errors->has('{{field.name}}') ? ' has-error' : '' }}">
+    {!! Form::label('{{field.name}}-field', '{{field.Name}}') !!}
+    {!! Form::text('{{field.name}}', null, ['class' => 'form-control', 'required' => 'required', 'id' => '{{field.name}}-field']) !!}
+    <small class="text-danger">{{ $errors->first('{{field.name}}') }}</small>
 </div>
+
